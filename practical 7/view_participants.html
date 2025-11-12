@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Participants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+  <aside class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="#">Manage Events</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><a href="index.html">Logout</a></li>
+    </ul>
+  </aside>
+
+  <section class="main-content">
+    <header>
+      <h1>Participants List</h1>
+    </header>
+
+    <table id="participantsTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Registered On</th>
+        </tr>
+      </thead>
+      <tbody id="participantsBody">
+        <!-- Filled dynamically -->
+      </tbody>
+    </table>
+
+    <button class="cancel-btn" onclick="goBack()">Back to Dashboard</button>
+  </section>
+</div>
+
+<script src="participants.js"></script>
+</body>
+</html>

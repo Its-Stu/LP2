@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - Event Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <header>
+        <h1>Event Management Dashboard</h1>
+      </header>
+
+      <section class="content-section">
+        <h2>Event Records</h2>
+        <button class="add-btn" onclick="openAddModal()">+ Add Event</button>
+
+        <table id="eventTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Event Name</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="eventBody">
+            <tr>
+              <td>1</td>
+              <td>Tech Conference</td>
+              <td>2025-11-20</td>
+              <td>Mumbai</td>
+              <td>
+                <button class="update-btn" onclick="openEditModal(this)">Update</button>
+                <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Music Fest</td>
+              <td>2025-12-10</td>
+              <td>Pune</td>
+              <td>
+                <button class="update-btn" onclick="openEditModal(this)">Update</button>
+                <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal for Add/Edit -->
+  <div id="eventModal" class="modal">
+    <div class="modal-content">
+      <h3 id="modalTitle">Add Event</h3>
+      <input type="hidden" id="editRowIndex">
+      <label>Event Name:</label>
+      <input type="text" id="eventName" required>
+
+      <label>Date:</label>
+      <input type="date" id="eventDate" required>
+
+      <label>Location:</label>
+      <input type="text" id="eventLocation" required>
+
+      <button class="save-btn" onclick="saveEvent()">Save</button>
+      <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
